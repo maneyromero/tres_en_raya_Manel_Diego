@@ -23,6 +23,7 @@ public class Juego {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         System.out.println("diego");
+        System.out.println("manel");
     }
     
 }
