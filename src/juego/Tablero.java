@@ -10,5 +10,20 @@ package juego;
  * @author Diego
  */
 public class Tablero {
+    public Casilla[][] tablero;
+
+    public Tablero(Casilla[][] tablero) {
+        this.tablero = tablero;
+    }
+
+    public Casilla[][] getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(Casilla[][] tablero) {
+        this.tablero = tablero;
+    }
+    
     
 }
+
