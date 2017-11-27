@@ -9,6 +9,6 @@ package juego;
  *
  * @author Manel
  */
-public class Jugador {
+public class Jugador { 
     
 }
