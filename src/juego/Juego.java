@@ -24,6 +24,7 @@ public class Juego {
         // TODO code application logic here
         System.out.println("diego");
         System.out.println("manel");
+        System.out.println("Te subo el proyecto");
     }
     
 }
