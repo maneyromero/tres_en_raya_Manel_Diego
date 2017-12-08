@@ -18,13 +18,25 @@ public class Juego {
     /**
      * @param args the command line arguments
      */
-  
-
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        System.out.println("diego");
-        System.out.println("manel");
-        System.out.println("Te subo el proyecto");
-    }
-    
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        //Variables
+        int turno = 0;
+        int fila;
+        int columna;
+
+        //Juego
+        Jugador j1 = new Jugador("X", "Diego");
+        Jugador j2 = new Jugador("O", "Manel");
+        Jugador jVacio = new Jugador("-", "");
+        Jugador jugadorActual = new Jugador("", "");
+
+        Casilla auxCasilla = new Casilla(false, jVacio);
+        Casilla[][] casillas = new Casilla[3][3];
+        Tablero t1 = new Tablero(casillas);
+
+    }  
 }

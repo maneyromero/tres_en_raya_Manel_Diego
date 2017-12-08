@@ -33,6 +33,11 @@ public class Casilla {
     public void setJugador(Jugador jugador) {
         this.jugador = jugador;
     }
+
+    @Override
+    public String toString() {
+        return jugador.toString();
+    }
     
     
 }
