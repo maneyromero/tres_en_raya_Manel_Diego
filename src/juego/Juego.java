@@ -38,5 +38,15 @@ public class Juego {
         Casilla[][] casillas = new Casilla[3][3];
         Tablero t1 = new Tablero(casillas);
 
-    }  
+    }
+    public static void crearTablero(Jugador jVacio, Tablero t1, Casilla[][] casillas, Casilla auxCasilla) {
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                auxCasilla.setJugador(jVacio);
+                casillas[i][j] = auxCasilla;
+                t1.setTablero(casillas);
+            }
+        }
+    }
 }
