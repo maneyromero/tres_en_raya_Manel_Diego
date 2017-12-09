@@ -43,6 +43,7 @@ public class Juego {
         mostrarTablero(t1, casillas);
 
     }
+
     public static void crearTablero(Jugador jVacio, Tablero t1, Casilla[][] casillas, Casilla auxCasilla) {
 
         for (int i = 0; i < 3; i++) {
@@ -53,10 +54,9 @@ public class Juego {
             }
         }
     }
-    
+
     public static void mostrarTablero(Tablero t1, Casilla[][] casillas) {
 
-        
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print(t1.getTablero() + " ");
@@ -65,7 +65,8 @@ public class Juego {
         }
 
     }
-     public static boolean comprobarPosicion(Casilla[][] casillas, int fila, int columna) {
+
+    public static boolean comprobarPosicion(Casilla[][] casillas, int fila, int columna) {
 
         boolean enUso = false;
         if (fila > 2 || columna > 2) {
@@ -77,5 +78,14 @@ public class Juego {
             enUso = true;
         }
         return enUso;
+    }
+
+    public static void insertarFicha(Tablero t1, Casilla[][] casillas, Casilla auxCasilla, int fila, int columna, Jugador jugadorActual) {
+
+        auxCasilla.setInUse(true);
+        auxCasilla.setJugador(jugadorActual);
+        casillas[fila][columna] = auxCasilla;
+        t1.setTablero(casillas);
+
     }
 }
