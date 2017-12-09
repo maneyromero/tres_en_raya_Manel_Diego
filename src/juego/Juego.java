@@ -65,4 +65,17 @@ public class Juego {
         }
 
     }
+     public static boolean comprobarPosicion(Casilla[][] casillas, int fila, int columna) {
+
+        boolean enUso = false;
+        if (fila > 2 || columna > 2) {
+            System.out.println("Esa casilla no existe");
+
+        } else if (casillas[fila][columna].isInUse() == true) {
+            System.out.println("Esa casilla ya esta en uso");
+        } else {
+            enUso = true;
+        }
+        return enUso;
+    }
 }
