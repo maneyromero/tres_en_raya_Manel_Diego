@@ -42,6 +42,32 @@ public class Juego {
 
         mostrarTablero(t1, casillas);
 
+        while (turno <= 9) {
+
+            do {
+                if (turno % 2 == 0) {
+                    jugadorActual = j1;
+                } else {
+                    jugadorActual = j2;
+                }
+
+                System.out.println("El turno es de: " + jugadorActual.getNombre());
+                System.out.println("Introduce fila: 0, 1 o 2");
+                fila = Integer.parseInt(br.readLine());
+                System.out.println("Introduce columna: 0, 1 o 2");
+                columna = Integer.parseInt(br.readLine());
+
+            } while (comprobarPosicion(casillas, fila, columna) == false);
+
+            insertarFicha(t1, casillas, auxCasilla, fila, columna, jugadorActual);
+            mostrarTablero(t1, casillas);
+            if (ganador(casillas, jugadorActual) == true) {
+                System.out.println("El ganador es: " + jugadorActual.getNombre());
+                break;
+            }
+            turno++;
+        }
+
     }
 
     public static void crearTablero(Jugador jVacio, Tablero t1, Casilla[][] casillas, Casilla auxCasilla) {
@@ -59,7 +85,7 @@ public class Juego {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print(t1.getTablero() + " ");
+                System.out.print(casillas[i][j] + " ");
             }
             System.out.println("");
         }
@@ -88,44 +114,45 @@ public class Juego {
         t1.setTablero(casillas);
 
     }
-     public static boolean ganador(Casilla casillas[][], Jugador jugadorActual){
-        
+
+    public static boolean ganador(Casilla casillas[][], Jugador jugadorActual) {
+
         boolean ganador = false;
-        
-        if (casillas[0][0].getJugador() == jugadorActual 
-                && casillas[0][1].getJugador() == jugadorActual 
+
+        if (casillas[0][0].getJugador() == jugadorActual
+                && casillas[0][1].getJugador() == jugadorActual
                 && casillas[0][2].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[1][0].getJugador() == jugadorActual 
-                && casillas[1][1].getJugador() == jugadorActual 
-                && casillas[1][2].getJugador() == jugadorActual){
+        } else if (casillas[1][0].getJugador() == jugadorActual
+                && casillas[1][1].getJugador() == jugadorActual
+                && casillas[1][2].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[2][0].getJugador() == jugadorActual 
-                && casillas[2][1].getJugador() == jugadorActual 
-                && casillas[2][2].getJugador() == jugadorActual){
+        } else if (casillas[2][0].getJugador() == jugadorActual
+                && casillas[2][1].getJugador() == jugadorActual
+                && casillas[2][2].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[0][0].getJugador() == jugadorActual 
-                && casillas[1][0].getJugador() == jugadorActual 
-                && casillas[2][0].getJugador() == jugadorActual){
+        } else if (casillas[0][0].getJugador() == jugadorActual
+                && casillas[1][0].getJugador() == jugadorActual
+                && casillas[2][0].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[0][1].getJugador() == jugadorActual 
-                && casillas[1][1].getJugador() == jugadorActual 
-                && casillas[2][1].getJugador() == jugadorActual){
+        } else if (casillas[0][1].getJugador() == jugadorActual
+                && casillas[1][1].getJugador() == jugadorActual
+                && casillas[2][1].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[0][2].getJugador() == jugadorActual 
-                && casillas[1][2].getJugador() == jugadorActual 
-                && casillas[2][2].getJugador() == jugadorActual){
+        } else if (casillas[0][2].getJugador() == jugadorActual
+                && casillas[1][2].getJugador() == jugadorActual
+                && casillas[2][2].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[0][0].getJugador() == jugadorActual 
-                && casillas[1][1].getJugador() == jugadorActual 
-                && casillas[2][2].getJugador() == jugadorActual){
+        } else if (casillas[0][0].getJugador() == jugadorActual
+                && casillas[1][1].getJugador() == jugadorActual
+                && casillas[2][2].getJugador() == jugadorActual) {
             ganador = true;
-        }else if(casillas[0][2].getJugador() == jugadorActual 
-                && casillas[1][1].getJugador() == jugadorActual 
-                && casillas[2][0].getJugador() == jugadorActual){
+        } else if (casillas[0][2].getJugador() == jugadorActual
+                && casillas[1][1].getJugador() == jugadorActual
+                && casillas[2][0].getJugador() == jugadorActual) {
             ganador = true;
         }
-        
+
         return ganador;
     }
 }
