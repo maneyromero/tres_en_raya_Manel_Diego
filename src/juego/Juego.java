@@ -88,4 +88,44 @@ public class Juego {
         t1.setTablero(casillas);
 
     }
+     public static boolean ganador(Casilla casillas[][], Jugador jugadorActual){
+        
+        boolean ganador = false;
+        
+        if (casillas[0][0].getJugador() == jugadorActual 
+                && casillas[0][1].getJugador() == jugadorActual 
+                && casillas[0][2].getJugador() == jugadorActual) {
+            ganador = true;
+        }else if(casillas[1][0].getJugador() == jugadorActual 
+                && casillas[1][1].getJugador() == jugadorActual 
+                && casillas[1][2].getJugador() == jugadorActual){
+            ganador = true;
+        }else if(casillas[2][0].getJugador() == jugadorActual 
+                && casillas[2][1].getJugador() == jugadorActual 
+                && casillas[2][2].getJugador() == jugadorActual){
+            ganador = true;
+        }else if(casillas[0][0].getJugador() == jugadorActual 
+                && casillas[1][0].getJugador() == jugadorActual 
+                && casillas[2][0].getJugador() == jugadorActual){
+            ganador = true;
+        }else if(casillas[0][1].getJugador() == jugadorActual 
+                && casillas[1][1].getJugador() == jugadorActual 
+                && casillas[2][1].getJugador() == jugadorActual){
+            ganador = true;
+        }else if(casillas[0][2].getJugador() == jugadorActual 
+                && casillas[1][2].getJugador() == jugadorActual 
+                && casillas[2][2].getJugador() == jugadorActual){
+            ganador = true;
+        }else if(casillas[0][0].getJugador() == jugadorActual 
+                && casillas[1][1].getJugador() == jugadorActual 
+                && casillas[2][2].getJugador() == jugadorActual){
+            ganador = true;
+        }else if(casillas[0][2].getJugador() == jugadorActual 
+                && casillas[1][1].getJugador() == jugadorActual 
+                && casillas[2][0].getJugador() == jugadorActual){
+            ganador = true;
+        }
+        
+        return ganador;
+    }
 }
