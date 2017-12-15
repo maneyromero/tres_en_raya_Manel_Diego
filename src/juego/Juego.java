@@ -59,7 +59,7 @@ public class Juego {
 
             } while (comprobarPosicion(casillas, fila, columna) == false);
 
-            insertarFicha(t1, casillas, auxCasilla, fila, columna, jugadorActual);
+            insertarFicha(t1, casillas, fila, columna, jugadorActual);
             mostrarTablero(t1, casillas);
             if (ganador(casillas, jugadorActual) == true) {
                 System.out.println("El ganador es: " + jugadorActual.getNombre());
@@ -106,10 +106,9 @@ public class Juego {
         return enUso;
     }
 
-    public static void insertarFicha(Tablero t1, Casilla[][] casillas, Casilla auxCasilla, int fila, int columna, Jugador jugadorActual) {
+    public static void insertarFicha(Tablero t1, Casilla[][] casillas, int fila, int columna, Jugador jugadorActual) {
 
-        auxCasilla.setInUse(true);
-        auxCasilla.setJugador(jugadorActual);
+        Casilla auxCasilla = new Casilla(true, jugadorActual);
         casillas[fila][columna] = auxCasilla;
         t1.setTablero(casillas);
 
